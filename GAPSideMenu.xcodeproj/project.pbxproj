@@ -15,13 +15,13 @@
 		B604C2E0185678F600A7885D /* GAPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B604C2DF185678F600A7885D /* GAPAppDelegate.m */; };
 		B604C2E3185678F600A7885D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B604C2E1185678F600A7885D /* Main_iPhone.storyboard */; };
 		B604C2E6185678F600A7885D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B604C2E4185678F600A7885D /* Main_iPad.storyboard */; };
-		B604C2E9185678F600A7885D /* GAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B604C2E8185678F600A7885D /* GAPViewController.m */; };
 		B604C2EB185678F600A7885D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B604C2EA185678F600A7885D /* Images.xcassets */; };
 		B604C2F2185678F600A7885D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2F1185678F600A7885D /* XCTest.framework */; };
 		B604C2F3185678F600A7885D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2CF185678F600A7885D /* Foundation.framework */; };
 		B604C2F4185678F600A7885D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2D3185678F600A7885D /* UIKit.framework */; };
 		B604C2FC185678F600A7885D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B604C2FA185678F600A7885D /* InfoPlist.strings */; };
 		B604C2FE185678F600A7885D /* GAPSideMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B604C2FD185678F600A7885D /* GAPSideMenuTests.m */; };
+		B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +47,14 @@
 		B604C2DF185678F600A7885D /* GAPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAPAppDelegate.m; sourceTree = "<group>"; };
 		B604C2E2185678F600A7885D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B604C2E5185678F600A7885D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B604C2E7185678F600A7885D /* GAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAPViewController.h; sourceTree = "<group>"; };
-		B604C2E8185678F600A7885D /* GAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAPViewController.m; sourceTree = "<group>"; };
 		B604C2EA185678F600A7885D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B604C2F0185678F600A7885D /* GAPSideMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAPSideMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B604C2F1185678F600A7885D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B604C2F9185678F600A7885D /* GAPSideMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GAPSideMenuTests-Info.plist"; sourceTree = "<group>"; };
 		B604C2FB185678F600A7885D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B604C2FD185678F600A7885D /* GAPSideMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAPSideMenuTests.m; sourceTree = "<group>"; };
+		B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPCenterViewController.h; sourceTree = "<group>"; };
+		B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPCenterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +114,12 @@
 		B604C2D5185678F600A7885D /* GAPSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */,
+				B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */,
 				B604C2DE185678F600A7885D /* GAPAppDelegate.h */,
 				B604C2DF185678F600A7885D /* GAPAppDelegate.m */,
 				B604C2E1185678F600A7885D /* Main_iPhone.storyboard */,
 				B604C2E4185678F600A7885D /* Main_iPad.storyboard */,
-				B604C2E7185678F600A7885D /* GAPViewController.h */,
-				B604C2E8185678F600A7885D /* GAPViewController.m */,
 				B604C2EA185678F600A7885D /* Images.xcassets */,
 				B604C2D6185678F600A7885D /* Supporting Files */,
 			);
@@ -254,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B604C2E9185678F600A7885D /* GAPViewController.m in Sources */,
+				B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */,
 				B604C2DC185678F600A7885D /* main.m in Sources */,
 				B604C2E0185678F600A7885D /* GAPAppDelegate.m in Sources */,
 			);
@@ -396,6 +396,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GAPSideMenu/GAPSideMenu-Prefix.pch";
 				INFOPLIST_FILE = "GAPSideMenu/GAPSideMenu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,6 +410,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GAPSideMenu/GAPSideMenu-Prefix.pch";
 				INFOPLIST_FILE = "GAPSideMenu/GAPSideMenu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -475,6 +477,7 @@
 				B604C303185678F600A7885D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B604C304185678F600A7885D /* Build configuration list for PBXNativeTarget "GAPSideMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +486,7 @@
 				B604C306185678F600A7885D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

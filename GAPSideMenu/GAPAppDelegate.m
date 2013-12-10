@@ -7,12 +7,19 @@
 //
 
 #import "GAPAppDelegate.h"
+#import "GAPCenterViewController.h"
 
 @implementation GAPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UIStoryboard *xx = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    
+    GAPCenterViewController *x = [xx instantiateViewControllerWithIdentifier:@"CenterViewController"];
+    x.animationDuration = 0.1;
+    
+    
     return YES;
 }
 							
