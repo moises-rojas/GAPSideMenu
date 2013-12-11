@@ -24,6 +24,8 @@ typedef enum slideMenuState
 @property (nonatomic, assign) id <GAPCenterViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UINavigationBar *centerNavigationBar;
 @property (nonatomic, assign) CGFloat animationDuration;
+@property (nonatomic, assign) CGFloat leftOffset;
+@property (nonatomic, assign) CGFloat rightOffset;
 
 
 @end

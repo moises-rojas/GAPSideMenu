@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIQ-9h-TAU">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIQ-9h-TAU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -36,7 +36,12 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VIQ-9h-TAU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ohl-Qd-guq"/>
+                            <constraint firstItem="VIQ-9h-TAU" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Yhm-BP-jsN"/>
+                            <constraint firstAttribute="trailing" secondItem="VIQ-9h-TAU" secondAttribute="trailing" id="h1m-X1-4y9"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="centerNavigationBar" destination="VIQ-9h-TAU" id="MZI-xo-Voq"/>
@@ -75,7 +80,7 @@
                     <view key="view" contentMode="scaleToFill" id="HVD-kU-l3S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1595142501" green="0.58927376929999997" blue="0.71439792800000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFP-Jb-Vod" userLabel="First Responder" sceneMemberID="firstResponder"/>

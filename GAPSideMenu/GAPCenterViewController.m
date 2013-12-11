@@ -27,6 +27,14 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,40 +46,189 @@
 }
 
 
+- (void)showLeftPanelOnPortrait {
+    CGSize size = self.view.frame.size;
+    if (_currentMenuState == CENTER_ON_SCREEN) {
+        
+        self.leftPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
+        [self.view addSubview:self.leftPanelViewController.view];
+        _leftPanelViewController.view.frame = CGRectMake(-_leftPanelViewController.view.frame.size.width, 0, _leftPanelViewController.view.frame.size.width, _leftPanelViewController.view.frame.size.height);
+        
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            self.view.frame = CGRectMake(200, 0, size.width, size.height);
+        }];
+        _currentMenuState = LEFT_ON_SCREEN;
+        
+    } else {
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            self.view.frame = CGRectMake(0, 0, size.width, size.height);
+        } completion:^(BOOL finished){
+            [self.leftPanelViewController.view removeFromSuperview];
+        }];
+        
+        _currentMenuState = CENTER_ON_SCREEN;
+    }
+}
+
+- (void)showRightPanelOnPortrait {
+    CGSize size = self.view.frame.size;
+    if (_currentMenuState == CENTER_ON_SCREEN) {
+        
+        self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
+        [self.view addSubview:self.rightPanelViewController.view];
+        _rightPanelViewController.view.frame = CGRectMake(320.0, 0, _rightPanelViewController.view.frame.size.width, _rightPanelViewController.view.frame.size.height);
+        
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            self.view.frame = CGRectMake(-200, 0, size.width, size.height);
+            _rightPanelViewController.view.frame = CGRectMake(320, 0, size.width, size.height);
+            
+        }];
+        _currentMenuState = RIGHT_ON_SCREEN;
+        
+    } else {
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            self.view.frame = CGRectMake(0, 0, size.width, size.height);
+            _rightPanelViewController.view.frame = CGRectMake(320, 0, size.width, size.height);
+        }];
+        _currentMenuState = CENTER_ON_SCREEN;
+    }
+}
+
+- (void)showLeftPanelOnLandscape {
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        CGSize size = self.view.frame.size;
+        if (_currentMenuState == CENTER_ON_SCREEN) {
+            
+            self.leftPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
+            [self.view addSubview:self.leftPanelViewController.view];
+            _leftPanelViewController.view.frame = CGRectMake(-_leftPanelViewController.view.frame.size.width, 0, _leftPanelViewController.view.frame.size.width, _leftPanelViewController.view.frame.size.height);
+            
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, -200, size.width, size.height);
+            }];
+            _currentMenuState = LEFT_ON_SCREEN;
+            
+        } else {
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, 0, size.width, size.height);
+            } completion:^(BOOL finished){
+                [self.leftPanelViewController.view removeFromSuperview];
+                [self.leftPanelViewController removeFromParentViewController];
+            }];
+            _currentMenuState = CENTER_ON_SCREEN;
+        }
+    } else {
+        CGSize size = self.view.frame.size;
+        
+        if (_currentMenuState == CENTER_ON_SCREEN) {
+            self.leftPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
+            [self.view addSubview:self.leftPanelViewController.view];
+            _leftPanelViewController.view.frame = CGRectMake(-_leftPanelViewController.view.frame.size.width, 0, _leftPanelViewController.view.frame.size.width, _leftPanelViewController.view.frame.size.height);
+            
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, 200, size.width, size.height);
+            }];
+            _currentMenuState = LEFT_ON_SCREEN;
+            
+        } else {
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, 0, size.width, size.height);
+            } completion:^(BOOL finished){
+                [self.leftPanelViewController.view removeFromSuperview];
+
+            }];
+            _currentMenuState = CENTER_ON_SCREEN;
+        }
+    }
+
+}
+- (void)showRightPanelOnLandscape {
+    if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+        CGSize size = self.view.frame.size;
+        if (_currentMenuState == CENTER_ON_SCREEN) {
+            self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
+            [self.view addSubview:self.rightPanelViewController.view];
+            _rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.height, 0, _rightPanelViewController.view.frame.size.width, _rightPanelViewController.view.frame.size.height);
+            
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, 200, size.width, size.height);
+            }];
+            _currentMenuState = RIGHT_ON_SCREEN;
+            
+        } else {
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, 0, size.width, size.height);
+            } completion:^(BOOL finished){
+                _rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.height, 0, _rightPanelViewController.view.frame.size.width, _rightPanelViewController.view.frame.size.height);
+                [self.rightPanelViewController.view removeFromSuperview];
+            }];
+            _currentMenuState = CENTER_ON_SCREEN;
+        }
+    } else {
+        CGSize size = self.view.frame.size;
+        if (_currentMenuState == CENTER_ON_SCREEN) {
+            self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
+            [self.view addSubview:self.rightPanelViewController.view];
+            _rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.height, 0, _rightPanelViewController.view.frame.size.width, _rightPanelViewController.view.frame.size.height);
+            
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, -200, size.width, size.height);
+            }];
+            _currentMenuState = RIGHT_ON_SCREEN;
+            
+        } else {
+            [UIView animateWithDuration:self.animationDuration animations:^{
+                self.view.frame = CGRectMake(0, 0, size.width, size.height);
+            } completion:^(BOOL finished){
+                 _rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.height, 0, _rightPanelViewController.view.frame.size.width, _rightPanelViewController.view.frame.size.height);
+                [self.rightPanelViewController.view removeFromSuperview];
+            }];
+            _currentMenuState = CENTER_ON_SCREEN;
+        }
+    }
+}
 
 - (IBAction)showLeftPanel:(id)sender {
     
-    CGSize size = self.view.frame.size;
-    if (_currentMenuState == CENTER_ON_SCREEN) {
-    
-        self.leftPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
-        [self.view addSubview:self.leftPanelViewController.view];
-        //[_leftPanelViewController didMoveToParentViewController:self];
-        _leftPanelViewController.view.frame = CGRectMake(-320.0, 0, _leftPanelViewController.view.frame.size.width, _leftPanelViewController.view.frame.size.height);
+    if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
+        [self showLeftPanelOnPortrait];
         
-        [UIView animateWithDuration:self.animationDuration animations:^{
-            self.view.frame = CGRectMake(220, 0, size.width, size.height);
-            _leftPanelViewController.view.frame = CGRectMake(-300, 0, size.width, size.height);
-
-        }];
-
-        
-        _currentMenuState = LEFT_ON_SCREEN;
-    
     } else {
-        // escondalo
-    }
+        [self showLeftPanelOnLandscape];
+            }
 }
 
 - (IBAction)showRightPanel:(id)sender {
     
-    if (_currentMenuState == CENTER_ON_SCREEN) {
-        self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
-
+    if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
+        [self showRightPanelOnPortrait];
     } else {
-        // escondalo
+        [self showRightPanelOnLandscape];
     }
 }
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    
+    
+    /*if (_currentMenuState != CENTER_ON_SCREEN) {
+        _currentMenuState = CENTER_ON_SCREEN;
+        if (fromInterfaceOrientation == UIInterfaceOrientationPortrait) {
+            if (_currentMenuState == LEFT_ON_SCREEN) {
+                [self showLeftPanelOnLandscape];
+            } else {
+                [self showRightPanelOnLandscape];
+            }
+        } else {
+            if (_currentMenuState == RIGHT_ON_SCREEN) {
+                [self showRightPanelOnPortrait];
+            } else {
+                [self showLeftPanelOnPortrait];
+            }
+        }
+    }*/
+}
+
 
 - (void)didReceiveMemoryWarning
 {
