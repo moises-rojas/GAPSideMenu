@@ -5,7 +5,7 @@ GAPSideMenu
 
 # Summary
  
- * This example corresponds a side menu (left and right) for use on iOS projects (iOS 6 and up). You can add it to your porject using CocoaPods.
+ * This example corresponds a side menu (left and right) for use on iOS projects (iOS 6 and up).
 
  
 # <a name="developers"></a>Developers
