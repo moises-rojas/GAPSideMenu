@@ -15,13 +15,8 @@ typedef enum slideMenuState
     LEFT_ON_SCREEN
 } SlideMenuState;
 
-@protocol GAPCenterViewControllerDelegate <NSObject>
-
-@end
-
 @interface GAPCenterViewController : UIViewController
 
-@property (nonatomic, assign) id <GAPCenterViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UINavigationBar *centerNavigationBar;
 @property (nonatomic, assign) CGFloat animationDuration;
 @property (nonatomic, assign) CGFloat leftOffset;
