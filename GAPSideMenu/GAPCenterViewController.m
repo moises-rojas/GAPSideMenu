@@ -7,13 +7,12 @@
 //
 
 #import "GAPCenterViewController.h"
-#import "GAPRightViewController.h"
 
 @interface GAPCenterViewController ()
 
 @property (nonatomic, assign) SlideMenuState currentMenuState;
 @property (nonatomic, retain) UIViewController *leftPanelViewController;
-@property (nonatomic, retain) GAPRightViewController *rightPanelViewController;
+@property (nonatomic, retain) UIViewController *rightPanelViewController;
 @property (nonatomic) CGSize size;
 
 @end
@@ -32,7 +31,9 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        self.animationDuration = 1.0;
+        self.leftOffset = 200;
+        self.rightOffset = 200;
     }
     return self;
 }
@@ -41,36 +42,34 @@
 {
     [super viewDidLoad];
     _currentMenuState = CENTER_ON_SCREEN;
-    self.animationDuration = 1.0;
     self.size = self.view.frame.size;
 
 	// Do any additional setup after loading the view.
 }
 
 - (IBAction)showLeftPanel:(id)sender {
-    
     if (_currentMenuState == CENTER_ON_SCREEN) {
         self.leftPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
         [self.view addSubview:self.leftPanelViewController.view];
-        self.leftPanelViewController.view.tag = 3;
-        self.leftPanelViewController.view.frame = CGRectMake(-self.leftPanelViewController.view.frame.size.width, 0, self.leftPanelViewController.view.frame.size.width, self.leftPanelViewController.view.frame.size.height);
+        self.leftPanelViewController.view.tag = 1;
+        self.leftPanelViewController.view.frame = CGRectMake(-self.view.frame.size.width, 0, self.view.frame.size.width, self.view.frame.size.height);
         
         switch (self.interfaceOrientation) {
             case UIInterfaceOrientationLandscapeLeft: {
                 [UIView animateWithDuration:self.animationDuration animations:^{
-                    self.view.frame = CGRectMake(0, -200, self.size.width, self.size.height);
+                    self.view.frame = CGRectMake(0, -self.leftOffset, self.size.width, self.size.height);
                 }];
             }
                 break;
             case UIInterfaceOrientationLandscapeRight: {
                 [UIView animateWithDuration:self.animationDuration animations:^{
-                    self.view.frame = CGRectMake(0, 200, self.size.width, self.size.height);
+                    self.view.frame = CGRectMake(0, self.leftOffset, self.size.width, self.size.height);
                 }];
             }
                 break;
             case UIInterfaceOrientationPortrait: {
                 [UIView animateWithDuration:self.animationDuration animations:^{
-                    self.view.frame = CGRectMake(200, 0, self.size.width, self.size.height);
+                    self.view.frame = CGRectMake(self.leftOffset, 0, self.size.width, self.size.height);
                 }];
             }
                 break;
@@ -79,7 +78,7 @@
         }
         _currentMenuState = LEFT_ON_SCREEN;
     } else {
-        [self hideSideMenuWithTag:3];
+        [self hideSideMenuWithTag:1];
     }
 
 }
@@ -87,27 +86,27 @@
 - (IBAction)showRightPanel:(id)sender {
     if (_currentMenuState == CENTER_ON_SCREEN) {
         self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
-        [self.view addSubview:_rightPanelViewController.view];
-        self.rightPanelViewController.view.tag = 4;
+        [self.view addSubview:self.rightPanelViewController.view];
+        self.rightPanelViewController.view.tag = 2;
         self.rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.height, 0, self.view.frame.size.width, self.view.frame.size.height);
         
         switch (self.interfaceOrientation) {
             case UIInterfaceOrientationLandscapeLeft:{
                 [UIView animateWithDuration:self.animationDuration animations:^{
-                    self.view.frame = CGRectMake(0, 200, self.size.width, self.size.height);
+                    self.view.frame = CGRectMake(0, self.rightOffset, self.size.width, self.size.height);
                 }];
             }
                 break;
             case UIInterfaceOrientationLandscapeRight: {
                 [UIView animateWithDuration:self.animationDuration animations:^{
-                    self.view.frame = CGRectMake(0, -200, self.size.width, self.size.height);
+                    self.view.frame = CGRectMake(0, -self.rightOffset, self.size.width, self.size.height);
                 }];
             }
                 break;
             case UIInterfaceOrientationPortrait: {
                 self.rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width, self.view.frame.size.height);
                 [UIView animateWithDuration:self.animationDuration animations:^{
-                    self.view.frame = CGRectMake(-200, 0, self.size.width, self.size.height);
+                    self.view.frame = CGRectMake(-self.rightOffset, 0, self.size.width, self.size.height);
                 }];
             }
                 break;
@@ -116,7 +115,7 @@
         }
         _currentMenuState = RIGHT_ON_SCREEN;
     } else {
-        [self hideSideMenuWithTag:4];
+        [self hideSideMenuWithTag:2];
     }
 }
 

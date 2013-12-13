@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="-354" y="138"/>
         </scene>
-        <!--Right View Controller-->
+        <!--View Controller-->
         <scene sceneID="MPj-8X-CKS">
             <objects>
-                <viewController storyboardIdentifier="RightViewController" id="UIC-iF-5BP" customClass="GAPRightViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RightViewController" id="UIC-iF-5BP" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sG2-8Z-UZ3"/>
                         <viewControllerLayoutGuide type="bottom" id="GNg-Xt-n6g"/>

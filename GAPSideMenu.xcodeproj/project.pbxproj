@@ -21,7 +21,6 @@
 		B604C2F4185678F600A7885D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2D3185678F600A7885D /* UIKit.framework */; };
 		B604C2FC185678F600A7885D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B604C2FA185678F600A7885D /* InfoPlist.strings */; };
 		B604C2FE185678F600A7885D /* GAPSideMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B604C2FD185678F600A7885D /* GAPSideMenuTests.m */; };
-		B69F820D185A71A600D6EBC1 /* GAPRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69F820C185A71A600D6EBC1 /* GAPRightViewController.m */; };
 		B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +53,6 @@
 		B604C2F9185678F600A7885D /* GAPSideMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GAPSideMenuTests-Info.plist"; sourceTree = "<group>"; };
 		B604C2FB185678F600A7885D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B604C2FD185678F600A7885D /* GAPSideMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAPSideMenuTests.m; sourceTree = "<group>"; };
-		B69F820B185A71A600D6EBC1 /* GAPRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPRightViewController.h; sourceTree = "<group>"; };
-		B69F820C185A71A600D6EBC1 /* GAPRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPRightViewController.m; sourceTree = "<group>"; };
 		B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPCenterViewController.h; sourceTree = "<group>"; };
 		B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPCenterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,8 +122,6 @@
 				B604C2E4185678F600A7885D /* Main_iPad.storyboard */,
 				B604C2EA185678F600A7885D /* Images.xcassets */,
 				B604C2D6185678F600A7885D /* Supporting Files */,
-				B69F820B185A71A600D6EBC1 /* GAPRightViewController.h */,
-				B69F820C185A71A600D6EBC1 /* GAPRightViewController.m */,
 			);
 			path = GAPSideMenu;
 			sourceTree = "<group>";
@@ -259,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69F820D185A71A600D6EBC1 /* GAPRightViewController.m in Sources */,
 				B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */,
 				B604C2DC185678F600A7885D /* main.m in Sources */,
 				B604C2E0185678F600A7885D /* GAPAppDelegate.m in Sources */,
