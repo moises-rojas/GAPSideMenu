@@ -23,4 +23,6 @@ typedef enum slideMenuState
 @property (nonatomic, assign) CGFloat rightOffset;
 
 
+- (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer;
+
 @end

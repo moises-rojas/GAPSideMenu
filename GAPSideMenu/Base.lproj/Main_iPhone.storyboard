@@ -37,17 +37,26 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="VIQ-9h-TAU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ohl-Qd-guq"/>
                             <constraint firstItem="VIQ-9h-TAU" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Yhm-BP-jsN"/>
                             <constraint firstAttribute="trailing" secondItem="VIQ-9h-TAU" secondAttribute="trailing" id="h1m-X1-4y9"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sE4-v9-KeF" appends="YES" id="XW2-KZ-Vjw"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="centerNavigationBar" destination="VIQ-9h-TAU" id="MZI-xo-Voq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="sE4-v9-KeF">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="MgI-mN-GCI"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="160" y="138"/>
         </scene>
