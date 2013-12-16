@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 typedef enum slideMenuState
 {
@@ -15,14 +16,14 @@ typedef enum slideMenuState
     LEFT_ON_SCREEN
 } SlideMenuState;
 
-@interface GAPCenterViewController : UIViewController
+@interface GAPCenterViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *centerNavigationBar;
 @property (nonatomic, assign) CGFloat animationDuration;
 @property (nonatomic, assign) CGFloat leftOffset;
 @property (nonatomic, assign) CGFloat rightOffset;
 
-
-- (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer;
+@property (nonatomic, assign) CGFloat firstX;
+@property (nonatomic, assign) CGFloat firstY;
 
 @end

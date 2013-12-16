@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B604365A185F4F47006EB260 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6043659185F4F47006EB260 /* MobileCoreServices.framework */; };
 		B604C2D0185678F600A7885D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2CF185678F600A7885D /* Foundation.framework */; };
 		B604C2D2185678F600A7885D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2D1185678F600A7885D /* CoreGraphics.framework */; };
 		B604C2D4185678F600A7885D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2D3185678F600A7885D /* UIKit.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6043659185F4F47006EB260 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B604C2CC185678F600A7885D /* GAPSideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAPSideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B604C2CF185678F600A7885D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B604C2D1185678F600A7885D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B604365A185F4F47006EB260 /* MobileCoreServices.framework in Frameworks */,
 				B604C2D2185678F600A7885D /* CoreGraphics.framework in Frameworks */,
 				B604C2D4185678F600A7885D /* UIKit.framework in Frameworks */,
 				B604C2D0185678F600A7885D /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		B604C2CE185678F600A7885D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6043659185F4F47006EB260 /* MobileCoreServices.framework */,
 				B604C2CF185678F600A7885D /* Foundation.framework */,
 				B604C2D1185678F600A7885D /* CoreGraphics.framework */,
 				B604C2D3185678F600A7885D /* UIKit.framework */,
