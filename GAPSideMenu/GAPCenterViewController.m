@@ -130,12 +130,12 @@
     self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
     [self.view addSubview:self.rightPanelViewController.view];
     self.rightPanelViewController.view.tag = tag;
-    self.rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.height, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.rightPanelViewController.view.frame = CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 -(void)move:(id)sender {
     
-    CGRect motionFrame, endFrame;
+    CGRect endFrame;
     
     [[[(UITapGestureRecognizer*)sender view] layer] removeAllAnimations];
 
@@ -152,24 +152,34 @@
         [self instantiateRightViewControllerWithTag:2];
     }
     
-    //[[sender view] setFrame:CGRectMake(translatedPoint.x, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    motionFrame = CGRectMake(translatedPoint.x, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [[sender view] setFrame:CGRectMake(translatedPoint.x, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
    if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
-    CGFloat finalX = translatedPoint.x + (.45*[(UIPanGestureRecognizer*)sender velocityInView:self.view].x);
-       NSLog(@"UIPanGestureRecognizer*)sender velocityInView: %f",.45*[(UIPanGestureRecognizer*)sender velocityInView:self.view].x);
-       NSLog(@"final X: %f",finalX);
+        
+		CGFloat finalX = translatedPoint.x + (.35*[(UIPanGestureRecognizer*)sender velocityInView:self.view].x);
+       
+       
        switch (self.interfaceOrientation) {
            case UIInterfaceOrientationPortrait: {
-               NSLog(@"translatedPoint: %f", translatedPoint.x);
-               if (finalX < 0 || finalX < self.leftOffset/2) {
-                   finalX = 0;
-                   self.currentMenuState = CENTER_ON_SCREEN;
-               } else if(finalX > self.leftOffset/2) {
+               if (finalX < -self.rightOffset/2 && self.currentMenuState != RIGHT_ON_SCREEN) {
+                   finalX = -self.rightOffset;
+                   self.currentMenuState = RIGHT_ON_SCREEN;
+               } else if(finalX > self.leftOffset/2 && self.currentMenuState != LEFT_ON_SCREEN) {
                    finalX = self.leftOffset;
                    self.currentMenuState = LEFT_ON_SCREEN;
+               } else if(finalX > -self.rightOffset/2 || finalX <self.leftOffset/2) {
+                   finalX = 0;
+                   self.currentMenuState = CENTER_ON_SCREEN;
                }
                endFrame = CGRectMake(finalX, 0, self.view.frame.size.width, self.view.frame.size.height);
+           }
+               break;
+           case UIInterfaceOrientationLandscapeLeft:{
+               
+           }
+               break;
+           case UIInterfaceOrientationLandscapeRight: {
+               
            }
                break;
            default:
