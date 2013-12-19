@@ -22,6 +22,8 @@
 		B604C2F4185678F600A7885D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604C2D3185678F600A7885D /* UIKit.framework */; };
 		B604C2FC185678F600A7885D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B604C2FA185678F600A7885D /* InfoPlist.strings */; };
 		B604C2FE185678F600A7885D /* GAPSideMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B604C2FD185678F600A7885D /* GAPSideMenuTests.m */; };
+		B6A17D6B1863AD9600149E60 /* GAPGenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A17D6A1863AD9600149E60 /* GAPGenericViewController.m */; };
+		B6A17D711863AE8A00149E60 /* UIViewController+GAPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */; };
 		B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,10 @@
 		B604C2F9185678F600A7885D /* GAPSideMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GAPSideMenuTests-Info.plist"; sourceTree = "<group>"; };
 		B604C2FB185678F600A7885D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B604C2FD185678F600A7885D /* GAPSideMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAPSideMenuTests.m; sourceTree = "<group>"; };
+		B6A17D691863AD9600149E60 /* GAPGenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPGenericViewController.h; sourceTree = "<group>"; };
+		B6A17D6A1863AD9600149E60 /* GAPGenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPGenericViewController.m; sourceTree = "<group>"; };
+		B6A17D6F1863AE8A00149E60 /* UIViewController+GAPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GAPMainViewController.h"; sourceTree = "<group>"; };
+		B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GAPMainViewController.m"; sourceTree = "<group>"; };
 		B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPCenterViewController.h; sourceTree = "<group>"; };
 		B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPCenterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +124,8 @@
 		B604C2D5185678F600A7885D /* GAPSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				B6A17D691863AD9600149E60 /* GAPGenericViewController.h */,
+				B6A17D6A1863AD9600149E60 /* GAPGenericViewController.m */,
 				B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */,
 				B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */,
 				B604C2DE185678F600A7885D /* GAPAppDelegate.h */,
@@ -126,6 +134,8 @@
 				B604C2E4185678F600A7885D /* Main_iPad.storyboard */,
 				B604C2EA185678F600A7885D /* Images.xcassets */,
 				B604C2D6185678F600A7885D /* Supporting Files */,
+				B6A17D6F1863AE8A00149E60 /* UIViewController+GAPMainViewController.h */,
+				B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */,
 			);
 			path = GAPSideMenu;
 			sourceTree = "<group>";
@@ -258,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A17D711863AE8A00149E60 /* UIViewController+GAPMainViewController.m in Sources */,
 				B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */,
+				B6A17D6B1863AD9600149E60 /* GAPGenericViewController.m in Sources */,
 				B604C2DC185678F600A7885D /* main.m in Sources */,
 				B604C2E0185678F600A7885D /* GAPAppDelegate.m in Sources */,
 			);
