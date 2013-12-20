@@ -7,6 +7,7 @@
 //
 
 #import "GAPCenterViewController.h"
+#import "GAPGenericViewController.h"
 
 @interface GAPCenterViewController ()
 
@@ -56,7 +57,7 @@
 	// Do any additional setup after loading the view.
 }
 
-- (IBAction)showLeftPanel:(id)sender {
+- (void)showLeftPanel {
     if (_currentMenuState == CENTER_ON_SCREEN) {
         [self instantiateLeftViewControllerWithTag:1];
         switch (self.interfaceOrientation) {
@@ -87,7 +88,7 @@
     }
 }
 
-- (IBAction)showRightPanel:(id)sender {
+- (void)showRightPanel {
     if (_currentMenuState == CENTER_ON_SCREEN) {
         [self instantiateRightViewControllerWithTag:2];
         switch (self.interfaceOrientation) {
@@ -119,7 +120,6 @@
     }
 }
 
-
 -(void)instantiateLeftViewControllerWithTag:(int)tag
 {
     self.leftPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
@@ -133,6 +133,7 @@
     self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CenterViewController"];
     self.centerViewController.view.tag = tag;
     self.centerViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self addChildViewController:self.centerViewController];
     [self.view addSubview:self.centerViewController.view];
 }
 

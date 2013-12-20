@@ -11,5 +11,6 @@
 
 @interface UIViewController (GAPMainViewController)
 
-+(id)GAPMainViewController;
+@property (nonatomic, retain, readonly) GAPCenterViewController * mainViewController;
+
 @end

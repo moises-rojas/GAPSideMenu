@@ -10,10 +10,9 @@
 
 @implementation UIViewController (GAPMainViewController)
 
-+(id)GAPMainViewController
-{
-    GAPCenterViewController *view = [self new];
-    return view;
+-(GAPCenterViewController *)mainViewController {
+
+    return (GAPCenterViewController *) [self parentViewController];
 }
 
 @end

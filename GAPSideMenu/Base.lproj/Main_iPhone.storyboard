@@ -22,16 +22,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="xCN-bM-OsI">
-                                        <barButtonItem key="leftBarButtonItem" title="Left" id="i0D-e5-qJy">
-                                            <connections>
-                                                <action selector="showLeftPanel:" destination="vXZ-lx-hvc" id="NZe-Ip-vXr"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Right" id="EN6-gr-qXV">
-                                            <connections>
-                                                <action selector="showRightPanel:" destination="vXZ-lx-hvc" id="QeN-Pt-zyS"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Left" id="i0D-e5-qJy"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Right" id="EN6-gr-qXV"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -60,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="136" y="892"/>
         </scene>
-        <!--View Controller-->
+        <!--Generic View Controller-->
         <scene sceneID="VsM-RR-7Oy">
             <objects>
-                <viewController storyboardIdentifier="CenterViewController" id="6Lb-N6-w0W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CenterViewController" id="6Lb-N6-w0W" customClass="GAPGenericViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YGZ-dQ-agS"/>
                         <viewControllerLayoutGuide type="bottom" id="B0U-lY-jCH"/>
@@ -79,6 +71,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47f-Lx-2oe">
+                                <rect key="frame" x="137" y="331" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doTheMagic:" destination="6Lb-N6-w0W" eventType="touchUpInside" id="GzR-AH-YF5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

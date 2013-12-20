@@ -26,4 +26,7 @@ typedef enum slideMenuState
 @property (nonatomic, assign) CGFloat firstX;
 @property (nonatomic, assign) CGFloat firstY;
 
+- (void)showLeftPanel;
+- (void)showRightPanel;
+
 @end
