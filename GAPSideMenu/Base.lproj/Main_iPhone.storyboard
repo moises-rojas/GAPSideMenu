@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -52,39 +52,29 @@
             </objects>
             <point key="canvasLocation" x="136" y="892"/>
         </scene>
-        <!--Generic View Controller-->
+        <!--Generic View Controller - Home-->
         <scene sceneID="VsM-RR-7Oy">
             <objects>
-                <viewController storyboardIdentifier="CenterViewController" id="6Lb-N6-w0W" customClass="GAPGenericViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CenterViewController" title="Home" id="6Lb-N6-w0W" customClass="GAPGenericViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YGZ-dQ-agS"/>
                         <viewControllerLayoutGuide type="bottom" id="B0U-lY-jCH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2wi-jy-y8M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3P-e5-SdL">
-                                <rect key="frame" x="115" y="66" width="91" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47f-Lx-2oe">
-                                <rect key="frame" x="137" y="331" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doTheMagic:" destination="6Lb-N6-w0W" eventType="touchUpInside" id="GzR-AH-YF5"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uuf-TA-Zbm"/>
+                    <navigationItem key="navigationItem" title="Home" id="uuf-TA-Zbm">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="ruB-SL-Otz">
+                            <connections>
+                                <action selector="openLeftMenu:" destination="6Lb-N6-w0W" id="pdH-Sb-B2w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myNavigationIItem" destination="uuf-TA-Zbm" id="aaC-HP-jfy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QB-Os-Lbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,13 +157,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S39-zv-kEn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Elk-8E-eZK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Elk-8E-eZK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1236327396" green="0.74828040080000002" blue="0.65959955619999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Lb-N6-w0W" kind="relationship" relationship="rootViewController" id="9I2-Xt-IEi"/>
+                        <segue destination="6Lb-N6-w0W" kind="relationship" relationship="rootViewController" id="FwA-Xc-wbx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3Y-xP-oqv" userLabel="First Responder" sceneMemberID="firstResponder"/>

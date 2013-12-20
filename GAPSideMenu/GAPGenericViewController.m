@@ -10,6 +10,7 @@
 #import "UIViewController+GAPMainViewController.h"
 
 @interface GAPGenericViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationIItem;
 
 @end
 
@@ -35,7 +36,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)doTheMagic:(id)sender {
+
+- (IBAction)openLeftMenu:(id)sender {
     [self.mainViewController showLeftPanel];
 }
 

@@ -237,6 +237,7 @@
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     _currentMenuState = CENTER_ON_SCREEN;
+    [self.view setAutoresizesSubviews:YES];
     [self hideSideMenuWithTag:1];
     [self hideSideMenuWithTag:2];
     /*if (_currentMenuState != CENTER_ON_SCREEN) {
