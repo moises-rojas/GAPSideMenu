@@ -87,11 +87,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Home" id="uuf-TA-Zbm">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="ruB-SL-Otz">
-                            <connections>
-                                <action selector="openLeftMenu:" destination="6Lb-N6-w0W" id="pdH-Sb-B2w"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="ruB-SL-Otz"/>
                     </navigationItem>
                     <connections>
                         <outlet property="myNavigationIItem" destination="uuf-TA-Zbm" id="aaC-HP-jfy"/>
@@ -99,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QB-Os-Lbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="146"/>
+            <point key="canvasLocation" x="662" y="138"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4tg-1E-7ll">

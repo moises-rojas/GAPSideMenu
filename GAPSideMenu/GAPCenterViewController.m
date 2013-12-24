@@ -149,8 +149,6 @@ bool hasLeftMenu, hasRightMenu;
     [self.view addSubview:self.centerViewController.view];
 }
 
-
-
 -(void)instantiateRightViewControllerWithTag:(int)tag
 {
     self.rightPanelViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightViewController"];
