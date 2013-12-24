@@ -11,7 +11,6 @@
 
 @interface GAPGenericViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationIItem;
-
 @end
 
 @implementation GAPGenericViewController
@@ -29,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning

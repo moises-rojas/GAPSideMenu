@@ -21,6 +21,8 @@
 
 @implementation GAPCenterViewController
 
+bool hasLeftMenu, hasRightMenu;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,6 +38,8 @@
         self.animationDuration = 1.0;
         self.leftOffset = 200;
         self.rightOffset = 200;
+        hasLeftMenu = YES;
+        hasRightMenu = NO;
     }
     return self;
 }
@@ -55,6 +59,14 @@
     [self instantiateCenterViewControllerWithTag:3];
 
 	// Do any additional setup after loading the view.
+}
+
+-(void)shouldHaveLeftMenu:(BOOL)leftMenu {
+    hasLeftMenu = leftMenu;
+}
+
+-(void)shouldHaveRightMenu:(BOOL)rightMenu {
+    hasRightMenu = rightMenu;
 }
 
 - (void)showLeftPanel {
@@ -159,6 +171,9 @@
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
         self.firstX = (self.interfaceOrientation == UIInterfaceOrientationPortrait)? [sender view].frame.origin.x : [sender view].frame.origin.y;
 	}
+    NSLog(@"Valor de first x: %f", self.firstX);
+
+    
     
     switch (self.interfaceOrientation) {
         case UIInterfaceOrientationLandscapeLeft: {
@@ -182,16 +197,36 @@
         default:
             break;
     }
+    NSLog(@"Valor de translatedX x: %f", translatedPoint.x);
+    NSLog(@"Valor de translatedY y: %f", translatedPoint.y);
     
-    [[sender view] setFrame:startFrame];
+    if (hasLeftMenu && (translatedPoint.x > 0 && translatedPoint.y > 0)) {
+        if (self.currentMenuState == CENTER_ON_SCREEN) {
+            [[sender view] setFrame:startFrame];
+            NSLog(@"Tiene left menu y lo estoy abriendo");
+        } else if (self.currentMenuState == LEFT_ON_SCREEN) {
+            [[sender view] setFrame:startFrame];
+            NSLog(@"Tiene left menu y lo estoy cerrando");
+        }
+    } else if (hasRightMenu && ((translatedPoint.x < 0 && self.interfaceOrientation == UIInterfaceOrientationPortrait) || (translatedPoint.y < 0 ))) {
+        if (self.currentMenuState == CENTER_ON_SCREEN) {
+            [[sender view] setFrame:startFrame];
+            NSLog(@"Tiene right menu y lo estoy abriendo");
+        } else if (self.currentMenuState == RIGHT_ON_SCREEN) {
+            [[sender view] setFrame:startFrame];
+            NSLog(@"Tiene right menu y lo estoy cerrando");
+        }
+    }
+    
+    
     
    if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
        CGFloat finalX = (self.interfaceOrientation == UIInterfaceOrientationPortrait)? translatedPoint.x + (.35*[(UIPanGestureRecognizer*)sender velocityInView:self.view].x) : translatedPoint.y + (.35*[(UIPanGestureRecognizer*)sender velocityInView:self.view].y);
        
-       if (finalX < -self.rightOffset/2 && self.currentMenuState == CENTER_ON_SCREEN) {
+       if (finalX < -self.rightOffset/2 && self.currentMenuState == CENTER_ON_SCREEN && hasRightMenu) {
            finalX = -self.rightOffset;
            self.currentMenuState = RIGHT_ON_SCREEN;
-       } else if(finalX > self.leftOffset/2 && self.currentMenuState == CENTER_ON_SCREEN) {
+       } else if(finalX > self.leftOffset/2 && self.currentMenuState == CENTER_ON_SCREEN && hasLeftMenu) {
            finalX = self.leftOffset;
            self.currentMenuState = LEFT_ON_SCREEN;
        } else if(finalX > -self.rightOffset/2 || finalX <self.leftOffset/2) {
@@ -218,12 +253,19 @@
        }
        [UIView beginAnimations:nil context:NULL];
        [UIView setAnimationDuration:.45];
-       [[sender view] setFrame:endFrame];
+       if (hasLeftMenu) {
+           if (!(self.currentMenuState == CENTER_ON_SCREEN && (translatedPoint.x < 0 || translatedPoint.y < 0))) {
+               [[sender view] setFrame:endFrame];
+           }
+       } else {
+           if (!(self.currentMenuState == CENTER_ON_SCREEN && (translatedPoint.x > 0 || translatedPoint.y > 0))) {
+               [[sender view] setFrame:endFrame];
+           }
+       }
        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
        [UIView commitAnimations];
 	}
 }
-
 
 -(void)hideSideMenuWithTag:(int)tag {
     [UIView animateWithDuration:self.animationDuration animations:^{
