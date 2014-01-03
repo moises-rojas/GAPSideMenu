@@ -25,6 +25,7 @@
 		B6A17D6B1863AD9600149E60 /* GAPGenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A17D6A1863AD9600149E60 /* GAPGenericViewController.m */; };
 		B6A17D711863AE8A00149E60 /* UIViewController+GAPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */; };
 		B6FFE3C1185757AC00146985 /* GAPCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */; };
+		F5A1F6FB1871F5EB00C7CFF2 /* GAPLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A1F6FA1871F5EB00C7CFF2 /* GAPLeftMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GAPMainViewController.m"; sourceTree = "<group>"; };
 		B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPCenterViewController.h; sourceTree = "<group>"; };
 		B6FFE3C0185757AC00146985 /* GAPCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPCenterViewController.m; sourceTree = "<group>"; };
+		F5A1F6F91871F5EB00C7CFF2 /* GAPLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAPLeftMenuViewController.h; sourceTree = "<group>"; };
+		F5A1F6FA1871F5EB00C7CFF2 /* GAPLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAPLeftMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 		B604C2D5185678F600A7885D /* GAPSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				B6A17D6F1863AE8A00149E60 /* UIViewController+GAPMainViewController.h */,
+				B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */,
 				B6A17D691863AD9600149E60 /* GAPGenericViewController.h */,
 				B6A17D6A1863AD9600149E60 /* GAPGenericViewController.m */,
 				B6FFE3BF185757AC00146985 /* GAPCenterViewController.h */,
@@ -134,8 +139,8 @@
 				B604C2E4185678F600A7885D /* Main_iPad.storyboard */,
 				B604C2EA185678F600A7885D /* Images.xcassets */,
 				B604C2D6185678F600A7885D /* Supporting Files */,
-				B6A17D6F1863AE8A00149E60 /* UIViewController+GAPMainViewController.h */,
-				B6A17D701863AE8A00149E60 /* UIViewController+GAPMainViewController.m */,
+				F5A1F6F91871F5EB00C7CFF2 /* GAPLeftMenuViewController.h */,
+				F5A1F6FA1871F5EB00C7CFF2 /* GAPLeftMenuViewController.m */,
 			);
 			path = GAPSideMenu;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				B6A17D6B1863AD9600149E60 /* GAPGenericViewController.m in Sources */,
 				B604C2DC185678F600A7885D /* main.m in Sources */,
 				B604C2E0185678F600A7885D /* GAPAppDelegate.m in Sources */,
+				F5A1F6FB1871F5EB00C7CFF2 /* GAPLeftMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +420,7 @@
 				INFOPLIST_FILE = "GAPSideMenu/GAPSideMenu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,6 +435,7 @@
 				INFOPLIST_FILE = "GAPSideMenu/GAPSideMenu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

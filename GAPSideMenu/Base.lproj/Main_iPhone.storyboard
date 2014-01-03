@@ -52,6 +52,31 @@
             </objects>
             <point key="canvasLocation" x="136" y="892"/>
         </scene>
+        <!--Generic View Controller-->
+        <scene sceneID="Pbr-Xd-gfC">
+            <objects>
+                <viewController storyboardIdentifier="secondViewController" id="uE6-w5-2Be" customClass="GAPGenericViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ipy-1H-SYp"/>
+                        <viewControllerLayoutGuide type="bottom" id="AcS-kj-AwR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q18-Kq-mrb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QhR-4J-LN9">
+                                <rect key="frame" x="100" y="205" width="120" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.32721198550000002" green="1" blue="0.100696693" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zup-5d-1Q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="892"/>
+        </scene>
         <!--Generic View Controller - Home-->
         <scene sceneID="VsM-RR-7Oy">
             <objects>
@@ -77,6 +102,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUC-Jv-h5Z">
+                                <rect key="frame" x="20" y="168" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testLog:" destination="6Lb-N6-w0W" eventType="touchUpInside" id="QF1-H2-T3s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="662" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Left Menu View Controller-->
         <scene sceneID="4tg-1E-7ll">
             <objects>
-                <viewController storyboardIdentifier="LeftViewController" id="bht-Ri-mjw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftViewController" id="bht-Ri-mjw" customClass="GAPLeftMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ibk-SK-bwL"/>
                         <viewControllerLayoutGuide type="bottom" id="NpS-Vc-r8h"/>
@@ -124,6 +159,20 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayLeft:" destination="bht-Ri-mjw" eventType="touchUpInside" id="amw-G3-mGp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTM-cP-MiI">
+                                <rect key="frame" x="254" y="296" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayLeft:" destination="bht-Ri-mjw" eventType="touchUpInside" id="lJ6-fQ-rmi"/>
+                                    <action selector="test:" destination="bht-Ri-mjw" eventType="touchUpInside" id="x05-q6-zvZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.48950566150000002" blue="0.16473668399999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -131,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7j-Ah-Bcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="138"/>
+            <point key="canvasLocation" x="-441" y="124"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MPj-8X-CKS">

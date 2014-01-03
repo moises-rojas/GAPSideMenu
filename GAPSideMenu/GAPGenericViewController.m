@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
 	// Do any additional setup after loading the view.
     
 }
@@ -35,6 +36,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)testLog:(id)sender {
+    NSLog(@"test a ver si imprime");
+    [self.mainViewController openAnotherView];
 }
 
 - (IBAction)openLeftMenu:(id)sender {

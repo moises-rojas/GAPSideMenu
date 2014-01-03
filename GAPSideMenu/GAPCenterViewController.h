@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "GAPLeftMenuViewController.h"
 
 typedef enum slideMenuState
 {
@@ -23,12 +24,18 @@ typedef enum slideMenuState
 @property (nonatomic, assign) CGFloat leftOffset;
 @property (nonatomic, assign) CGFloat rightOffset;
 
+@property (nonatomic, retain) GAPLeftMenuViewController *leftPanelViewController;
+@property (nonatomic, retain) UIViewController *rightPanelViewController;
+@property (nonatomic, retain) UIViewController *centerViewController;
+
 @property (nonatomic, assign) CGFloat firstX;
 @property (nonatomic, assign) CGFloat firstY;
 
 
 - (void)showLeftPanel;
 - (void)showRightPanel;
+
+- (void)openAnotherView;
 
 - (void)shouldHaveLeftMenu:(BOOL)leftMenu;
 - (void)shouldHaveRightMenu:(BOOL)rightMenu;

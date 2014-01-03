@@ -12,9 +12,6 @@
 @interface GAPCenterViewController ()
 
 @property (nonatomic, assign) SlideMenuState currentMenuState;
-@property (nonatomic, retain) UIViewController *leftPanelViewController;
-@property (nonatomic, retain) UIViewController *rightPanelViewController;
-@property (nonatomic, retain) UIViewController *centerViewController;
 @property (nonatomic) CGSize size;
 
 @end
@@ -49,6 +46,7 @@ bool hasLeftMenu, hasRightMenu;
     [super viewDidLoad];
     _currentMenuState = CENTER_ON_SCREEN;
     self.size = self.view.frame.size;
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
     
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
     [panRecognizer setMinimumNumberOfTouches:1];
@@ -142,8 +140,18 @@ bool hasLeftMenu, hasRightMenu;
 
 -(void)instantiateCenterViewControllerWithTag:(int)tag
 {
+    
     self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CenterViewController"];
     self.centerViewController.view.tag = tag;
+    self.centerViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self addChildViewController:self.centerViewController];
+    [self.view addSubview:self.centerViewController.view];
+}
+
+- (void)openAnotherView {
+    
+    self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondViewController"];
+//    self.centerViewController.view.tag = tag;
     self.centerViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self addChildViewController:self.centerViewController];
     [self.view addSubview:self.centerViewController.view];
@@ -274,10 +282,15 @@ bool hasLeftMenu, hasRightMenu;
     _currentMenuState = CENTER_ON_SCREEN;
 }
 
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self.view setAutoresizesSubviews:YES];
+}
+
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     _currentMenuState = CENTER_ON_SCREEN;
-    [self.view setAutoresizesSubviews:YES];
+    
     [self hideSideMenuWithTag:1];
     [self hideSideMenuWithTag:2];
     /*if (_currentMenuState != CENTER_ON_SCREEN) {
